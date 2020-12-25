@@ -1,0 +1,6 @@
+.NoteList {
+  flex: 1 1 50%;
+  padding: 1rem;
+  background: whitesmoke;
+  border-radius: 0.3rem;
+}

@@ -1,0 +1,15 @@
+.Text-area {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-family: monospace;
+  color: inherit;
+  line-height: 1.4;
+  border: none;
+  border-radius: 0.3rem;
+  border-bottom: 1px solid #8080807a;
+}
+
+.Text-area:focus {
+  outline: turquoise auto;
+}
