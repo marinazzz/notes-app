@@ -41,6 +41,8 @@ export default class Form extends React.Component {
                         value={this.state.input}
                         handleChange={this.handleChange}
                         id="input"
+                        aria-label="Add title of notes"
+                        aria-required="true"
                     />
                     <TextArea
                         name="textArea"
@@ -49,15 +51,19 @@ export default class Form extends React.Component {
                         cols="50"
                         rows="20"
                         id="textArea"
+                        aria-label="Write some notes"
+                        aria-required="true"
                     />
                     <div className="Form-buttons">
                         <Button
                             value="save"
                             className="Button"
+                            aria-label="Save notes"
                         />
                         <Button
                             value="delete"
                             className="Button-delete"
+                            aria-label="Delete notes"
                         />
                     </div>
                 </form>

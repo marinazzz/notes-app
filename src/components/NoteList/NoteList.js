@@ -5,17 +5,17 @@ import notesData from "../notesData";
 
 export default function NoteList() {
     const notes = notesData.map(note =>
-        <Note
-            key={note.id}
-            title={note.title}
-            text={note.text}
+        <Note key={note.id}
+            {...note}
         />
     );
 
     return (
         <div className="NoteList">
             <h2>All notes</h2>
-            {notes}
+            <ul>
+                {notes}
+            </ul>
         </div>
     );
 
