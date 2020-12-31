@@ -1,4 +1,4 @@
-const notesData = [
+const data = [
     {
         id: 1,
         title: 'React components',
@@ -11,4 +11,4 @@ const notesData = [
     }
 ]
 
-export default notesData;
+export default data;

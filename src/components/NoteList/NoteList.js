@@ -1,22 +1,19 @@
 import React from 'react';
 import Note from './Note/Note';
 import './NoteList.css';
-import notesData from "../notesData";
 
-export default function NoteList() {
-    const notes = notesData.map(note =>
-        <Note key={note.id}
+export default function NoteList(props) {
+    const notesData = props.notesData;
+    const notes = notesData.map((note, index) =>
+        <Note key={index}
             {...note}
         />
     );
 
     return (
-        <div className="NoteList">
-            <h2>All notes</h2>
-            <ul>
-                {notes}
-            </ul>
-        </div>
+        <ul>
+            {notes}
+        </ul>
     );
 
 }
