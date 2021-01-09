@@ -3,5 +3,5 @@ import './Button.css';
 
 export const Button = props =>
     <button className={props.className}>
-        {props.value}
+        {props.value} 
     </button>

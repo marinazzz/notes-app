@@ -13,12 +13,45 @@
   background: #6de4d9;
 }
 
-.Button-delete {
-  border: 0.1rem solid #6de4d9;
-  background: white;
+.Button-delete,
+.Button-edit,
+.Button-save {
+  width: 5rem;
+  background: #e70f0f;
+  color: #ffffff;
+  padding: 0.3rem;
+  border-radius: 0.8rem;
+  font-size: 0.8rem;
 }
 
-.Button:hover,
-.Button-delete:hover {
+.Button-edit {
+  background-color: white;
+  color: #0a0a0a;
+  font-weight: 600;
+  letter-spacing: 0.09rem;
+  cursor: pointer;
+}
+
+.Button-save {
+  background-color: rgb(51, 49, 49);
+  color: #fdfafa;
+  font-weight: 600;
+  letter-spacing: 0.09rem;
+  cursor: pointer;
+}
+
+.Button:hover {
   background-color: #92f0e6;
+}
+
+.Button-delete:hover {
+  background-color: #f57a7a;
+}
+
+.Button-edit:hover {
+  color: rgb(126, 123, 123);
+}
+
+.Button-save:hover {
+  background-color: rgb(70, 68, 68);
 }

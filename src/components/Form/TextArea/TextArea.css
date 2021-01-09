@@ -1,6 +1,7 @@
 .Text-area {
   margin-bottom: 1rem;
   padding: 0.5rem;
+  min-height: 25rem;
   font-size: 1.2rem;
   font-family: monospace;
   color: inherit;
@@ -12,4 +13,13 @@
 
 .Text-area:focus {
   outline: turquoise auto;
+}
+
+.Text-area-edit {
+  border: 1px solid #8080807a;
+  width: 95%;
+}
+
+.Label-textArea {
+  display: block;
 }
