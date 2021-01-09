@@ -1,6 +1,13 @@
 .App-content {
   margin: 0 auto;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-evenly;
   max-width: 900px;
+}
+
+@media (min-width: 768px) {
+  .App-content {
+    flex-direction: row;
+  }
 }
