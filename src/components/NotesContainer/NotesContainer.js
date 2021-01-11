@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../Form/Form';
+import NoteCreation from '../NoteCreation/NoteCreation';
 import NoteList from '../NoteList/NoteList';
 import data from '../data';
 import { nanoid } from 'nanoid';
@@ -12,6 +12,7 @@ class NotesContainer extends React.Component {
       title: '',
       text: '',
       data,
+      isEditing: false,
     };
   }
 
@@ -45,18 +46,18 @@ class NotesContainer extends React.Component {
   render() {
     return (
       <main className='App-content'>
-        <div className='NoteList'>
+        <section className='NoteList'>
           <h2>All notes</h2>
           <NoteList notesData={this.state.data} onDelete={this.handleDelete} />
-        </div>
-        <div className='Form-wrapper'>
+        </section>
+        <section className='Form-wrapper'>
           <h2>New notes</h2>
-          <Form
+          <NoteCreation
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
             {...this.state}
           />
-        </div>
+        </section>
       </main>
     );
   }

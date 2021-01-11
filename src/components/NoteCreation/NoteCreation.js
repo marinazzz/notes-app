@@ -1,33 +1,33 @@
 import React from 'react';
-import { Input } from './Input/Input';
-import { TextArea } from './TextArea/TextArea';
+import { NoteInput } from './NoteInput/NoteInput';
+import { NoteTextArea } from './NoteTextArea/NoteTextArea';
 import { Button } from '../Button/Button';
-import './Form.css';
+import './NoteCreation.css';
 
-export default function Form(props) {
+export default function NoteCreation(props) {
   return (
     <form onSubmit={props.handleSubmit} className='Form'>
-      <Input
+      <NoteInput
         name='title'
         type='text'
         value={props.title}
         handleChange={props.handleChange}
         id='title'
         aria-label='Add title of notes'
-        aria-required='true'
-        required
-      />
-      <TextArea
+      >
+        Add title
+      </NoteInput>
+      <NoteTextArea
         name='text'
         value={props.text}
         handleChange={props.handleChange}
         id='text'
         aria-label='Write some notes'
-        aria-required='true'
-        required
-      />
+      >
+        Add notes
+      </NoteTextArea>
       <div className='Form-buttons'>
-        <Button value='save' className='Button' aria-label='Save notes' />
+        <Button aria-label='Save notes'>save</Button>
       </div>
     </form>
   );

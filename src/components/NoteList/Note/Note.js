@@ -14,14 +14,16 @@ export default class Note extends React.Component {
   handleToggle = () => {
     this.setState((state, props) => ({
       isEditing: !state.isEditing,
+      id: props.id,
       title: props.title,
       text: props.text,
     }));
   };
 
-  handleEdit = () => {
+  handleSave = () => {
     this.setState({
       isEditing: !this.state.isEditing,
+      title: this.state.title,
     });
   };
 
@@ -39,7 +41,7 @@ export default class Note extends React.Component {
         {this.state.isEditing ? (
           <EditingTemplate
             {...this.state}
-            onSave={this.handleEdit}
+            onSave={this.handleSave}
             onCancel={this.handleToggle}
             handleChange={this.handleChange}
           />

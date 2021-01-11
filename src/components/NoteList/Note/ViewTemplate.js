@@ -1,24 +1,25 @@
 import React from 'react';
+import { Button } from '../../Button/Button';
 
 export const ViewTemplate = (props) => {
   return (
-    <div>
+    <>
       <h3>{props.title}</h3>
       <p>{props.text}</p>
       <div className='Form-buttons'>
-        <button
+        <Button
           className='Button-edit'
           onClick={() => props.onChange(props.id)}
         >
           edit
-        </button>
-        <button
+        </Button>
+        <Button
           className='Button-delete'
           onClick={() => props.onDelete(props.id)}
         >
           delete
-        </button>
+        </Button>
       </div>
-    </div>
+    </>
   );
 };

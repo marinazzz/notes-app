@@ -30,11 +30,12 @@
   font-weight: 600;
   letter-spacing: 0.09rem;
   cursor: pointer;
+  border: rgb(70, 68, 68) 1.5px solid;
 }
 
 .Button-save {
-  background-color: rgb(51, 49, 49);
-  color: #fdfafa;
+  color: #282c34;
+  background: #6de4d9;
   font-weight: 600;
   letter-spacing: 0.09rem;
   cursor: pointer;
@@ -50,8 +51,4 @@
 
 .Button-edit:hover {
   color: rgb(126, 123, 123);
-}
-
-.Button-save:hover {
-  background-color: rgb(70, 68, 68);
 }

@@ -2,10 +2,11 @@
   margin-bottom: 1rem;
   padding: 0.5rem;
   min-height: 25rem;
-  font-size: 1.2rem;
-  font-family: monospace;
+  max-width: 25rem;
+  font-size: 1rem;
+  font-family: 'Roboto';
   color: inherit;
-  line-height: 1.4;
+  line-height: 1.6;
   border: none;
   border-radius: 0.3rem;
   border-bottom: 1px solid #8080807a;
@@ -16,7 +17,7 @@
 }
 
 .Text-area-edit {
-  border: 1px solid #8080807a;
+  border: 1px solid turquoise;
   width: 95%;
 }
 
