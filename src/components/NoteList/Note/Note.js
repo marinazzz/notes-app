@@ -4,26 +4,29 @@ import { ViewTemplate } from './ViewTemplate';
 import './Note.css';
 
 export default class Note extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isEditing: false,
+      id: this.props.id,
+      title: this.props.title,
+      text: this.props.text,
     };
   }
 
   handleToggle = () => {
-    this.setState((state, props) => ({
-      isEditing: !state.isEditing,
-      id: props.id,
-      title: props.title,
-      text: props.text,
-    }));
+    const { isEditing, id, title, text } = this.state;
+    this.setState({
+      isEditing: !isEditing,
+      id: id,
+      title: title,
+      text: text,
+    });
   };
 
   handleSave = () => {
     this.setState({
       isEditing: !this.state.isEditing,
-      title: this.state.title,
     });
   };
 
