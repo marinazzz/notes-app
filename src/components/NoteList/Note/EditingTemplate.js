@@ -1,17 +1,23 @@
-import React from 'react';
 import { Button } from '../../Button/Button';
 import { NoteInput } from '../../NoteCreation/NoteInput/NoteInput';
 import { NoteTextArea } from '../../NoteCreation/NoteTextArea/NoteTextArea';
 
-export const EditingTemplate = (props) => {
+export const EditingTemplate = ({
+  title,
+  text,
+  id,
+  handleSubmit,
+  handleChange,
+  ...props
+}) => {
   return (
-    <form onSubmit={props.handleSubmit} className='Form'>
+    <form onSubmit={handleSubmit} className='Form'>
       <NoteInput
         className='Input Input-edit'
         name='title'
         type='text'
-        value={props.title}
-        handleChange={props.handleChange}
+        value={title}
+        handleChange={handleChange}
         id='title'
         aria-label='Change title of notes'
         aria-required='true'
@@ -22,8 +28,8 @@ export const EditingTemplate = (props) => {
       <NoteTextArea
         className='Text-area Text-area-edit'
         name='text'
-        value={props.text}
-        handleChange={props.handleChange}
+        value={text}
+        handleChange={handleChange}
         id='text'
         aria-label='Edit notes'
       >
@@ -33,14 +39,14 @@ export const EditingTemplate = (props) => {
         <Button
           type='button'
           className='Button-edit'
-          onClick={() => props.onCancel(props.id)}
+          onClick={() => props.onCancel(id)}
         >
           cancel
         </Button>
         <Button
           type='submit'
           className='Button Button-save'
-          onClick={() => props.onSave(props.id)}
+          onClick={() => props.onSave(id)}
         >
           save
         </Button>

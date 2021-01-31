@@ -1,17 +1,16 @@
-import React from 'react';
 import { NoteInput } from './NoteInput/NoteInput';
 import { NoteTextArea } from './NoteTextArea/NoteTextArea';
 import { Button } from '../Button/Button';
 import './NoteCreation.css';
 
-export default function NoteCreation(props) {
+const NoteCreation = ({ handleSubmit, handleChange, title, text }) => {
   return (
-    <form onSubmit={props.handleSubmit} className='Form'>
+    <form onSubmit={handleSubmit} className='Form'>
       <NoteInput
         name='title'
         type='text'
-        value={props.title}
-        handleChange={props.handleChange}
+        value={title}
+        handleChange={handleChange}
         id='title'
         aria-label='Add title of notes'
       >
@@ -19,8 +18,8 @@ export default function NoteCreation(props) {
       </NoteInput>
       <NoteTextArea
         name='text'
-        value={props.text}
-        handleChange={props.handleChange}
+        value={text}
+        handleChange={handleChange}
         id='text'
         aria-label='Write some notes'
       >
@@ -31,4 +30,6 @@ export default function NoteCreation(props) {
       </div>
     </form>
   );
-}
+};
+
+export default NoteCreation;

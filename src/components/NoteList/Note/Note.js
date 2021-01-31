@@ -14,17 +14,7 @@ export default class Note extends React.Component {
     };
   }
 
-  handleToggle = () => {
-    const { isEditing, id, title, text } = this.state;
-    this.setState({
-      isEditing: !isEditing,
-      id: id,
-      title: title,
-      text: text,
-    });
-  };
-
-  handleSave = () => {
+  handleToggleTemplate = () => {
     this.setState({
       isEditing: !this.state.isEditing,
     });
@@ -38,21 +28,33 @@ export default class Note extends React.Component {
     });
   };
 
+  handleCancel = () => {
+    const { isEditing } = this.state;
+    const { id, title, text } = this.props;
+
+    this.setState({
+      isEditing: !isEditing,
+      id,
+      title,
+      text,
+    });
+  };
+
   render() {
     return (
       <li className='Note'>
         {this.state.isEditing ? (
           <EditingTemplate
             {...this.state}
-            onSave={this.handleSave}
-            onCancel={this.handleToggle}
+            onSave={this.handleToggleTemplate}
+            onCancel={this.handleCancel}
             handleChange={this.handleChange}
           />
         ) : (
           <ViewTemplate
             {...this.props}
             {...this.state}
-            onChange={this.handleToggle}
+            onChange={this.handleToggleTemplate}
           />
         )}
       </li>

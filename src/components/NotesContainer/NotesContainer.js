@@ -37,18 +37,24 @@ class NotesContainer extends React.Component {
   };
 
   handleDelete = (id) => {
-    const filteredList = this.state.data.filter((item) => id !== item.id);
+    const { data } = this.state;
+    const filteredList = data.filter((item) => id !== item.id);
     this.setState({
       data: filteredList,
     });
   };
 
   render() {
+    const { data } = this.state;
     return (
       <main className='App-content'>
         <section className='NoteList'>
           <h2>All notes</h2>
-          <NoteList notesData={this.state.data} onDelete={this.handleDelete} />
+          {data.length > 0 ? (
+            <NoteList notesData={data} onDelete={this.handleDelete} />
+          ) : (
+            'No Notes To Show'
+          )}
         </section>
         <section className='Form-wrapper'>
           <h2>New notes</h2>
